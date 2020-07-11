@@ -1,4 +1,6 @@
 import React from "react";
+import style from "./style.module.css";
+
 
 function SearchForm(props) {
   return (
@@ -14,7 +16,7 @@ function SearchForm(props) {
           placeholder="Search for a Gif"
           id="search"
         />
-        <button onClick={props.handleFormSubmit} className="btn btn-primary mt-3">
+        <button  style ={style.button} onClick={props.handleFormSubmit} >
           Search
         </button>
       </div>
