@@ -1,51 +1,69 @@
-import React, { Component } from "react";
-import SearchForm from "./SearchForm";
-import ResultList from "./ResultList";
-import API from "../utils/AJAX";
+import React, { Component } from 'react';
+import SearchForm from './SearchForm';
+import ResultList from './ResultList';
+import API from '../utils/AJAX';
 
 class SearchResultContainer extends Component {
-  state = {
-    search: "",
-    results: []
-  };
+	state = {
+		search: '',
+		results: []
+	};
 
-  // When this component mounts, search the Giphy API for pictures of kittens
-  componentDidMount() {
-    this.searchGiphy("kittens");
-  }
+	// When this component mounts, search the Giphy API for pictures of kittens
+	componentDidMount() {
+		this.searchGiphy('kittens');
+	}
 
-  searchGiphy = query => {
-    API.search(query)
-      .then(res => this.setState({ results: res.data.data }))
-      .catch(err => console.log(err));
-  };
+	searchGiphy = query => {
+		let wordArr = '';
+		wordArr = query.trim().split(' ');
+		console.log(wordArr);
+		API.search(query)
+			.then(res => this.setState({ results: res.data.data }))
+			.catch(err => console.log(err));
+	};
 
-  handleInputChange = event => {
-    const name = event.target.name;
-    const value = event.target.value;
-    this.setState({
-      [name]: value
-    });
-  };
+	handleInputChange = event => {
+		const name = event.target.name;
+		const value = event.target.value;
 
-  // When the form is submitted, search the Giphy API for `this.state.search`
-  handleFormSubmit = event => {
-    event.preventDefault();
-    this.searchGiphy(this.state.search);
-  };
+		this.setState({
+			[name]: value
+		});
+		
+	};
 
-  render() {
-    return (
-      <div>
-        <SearchForm
-          search={this.state.search}
-          handleFormSubmit={this.handleFormSubmit}
-          handleInputChange={this.handleInputChange}
-        />
-        <ResultList results={this.state.results} />
-      </div>
-    );
-  }
+	// When the form is submitted, search the Giphy API for `this.state.search`
+	handleFormSubmit = event => {
+		event.preventDefault();
+		this.searchGiphy(this.state.search);
+	};
+
+	// componentDidMount() {
+	//   let wordArr =""
+	//   wordArr= query.trim().split(" ")
+	//   console.log(wordArr)
+	//   API.search(query)
+	//     .then(res => this.setState({ results: res.data.data }))
+	//     .catch(err => console.log(err));
+	//     // fetch(this.props.url)
+	//     // .then(response => response.json())
+	//     // .then(data => this.setState({ output: data }));
+	//   }
+
+	render() {
+		return (
+			<div>
+				<SearchForm
+					search={this.state.search}
+					handleFormSubmit={this.handleFormSubmit}
+					handleInputChange={this.handleInputChange}
+				/>
+				{/* render all results */}
+				<ResultList results={this.state.results} />
+			</div>
+		);
+	}
 }
 
 export default SearchResultContainer;
