@@ -15,12 +15,19 @@ class SearchResultContainer extends Component {
 	}
 
 	searchGiphy = query => {
-		let wordArr = '';
-		wordArr = query.trim().split(' ');
-		console.log(wordArr);
-		API.search(query)
-			.then(res => this.setState({ results: res.data.data }))
-			.catch(err => console.log(err));
+		let wordPromiseArray = '';
+    wordPromiseArray = query.trim().split(' ')
+      .map(word=> API.search(word));
+
+    
+    Promise.all(wordPromiseArray).then(resArray =>this.setState({ results: resArray}) )
+
+
+/*  */
+/*  Math.floor(math.random()*resArray.length()) console.log(resArray) */
+		// API.search(query)
+		// 	.then(res => this.setState({ results: res.data.data }))
+		// 	.catch(err => console.log(err));
 	};
 
 	handleInputChange = event => {
@@ -39,17 +46,7 @@ class SearchResultContainer extends Component {
 		this.searchGiphy(this.state.search);
 	};
 
-	// componentDidMount() {
-	//   let wordArr =""
-	//   wordArr= query.trim().split(" ")
-	//   console.log(wordArr)
-	//   API.search(query)
-	//     .then(res => this.setState({ results: res.data.data }))
-	//     .catch(err => console.log(err));
-	//     // fetch(this.props.url)
-	//     // .then(response => response.json())
-	//     // .then(data => this.setState({ output: data }));
-	//   }
+
 
 	render() {
 		return (
