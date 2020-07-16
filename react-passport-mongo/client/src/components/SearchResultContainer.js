@@ -18,9 +18,13 @@ class SearchResultContainer extends Component {
 		let wordPromiseArray = '';
     wordPromiseArray = query.trim().split(' ')
       .map(word=> API.search(word));
-    
-    Promise.all(wordPromiseArray).then(resArray => this.setState({ results: resArray}) )
 
+    
+    Promise.all(wordPromiseArray).then(resArray =>this.setState({ results: resArray}) )
+
+
+/*  */
+/*  Math.floor(math.random()*resArray.length()) console.log(resArray) */
 		// API.search(query)
 		// 	.then(res => this.setState({ results: res.data.data }))
 		// 	.catch(err => console.log(err));
