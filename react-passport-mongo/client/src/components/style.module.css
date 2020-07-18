@@ -3,6 +3,7 @@
 button{
     background-color: pink;
     font-size: medium;
+    font-weight: 500;
     text-shadow: rgb(174, 32, 174);
 }
 body{
@@ -11,4 +12,21 @@ body{
 
 .li {
     size: 20px;
+}
+input[type=text] {
+    border-top-color:transparent;
+    border-left-color: transparent ;
+    border-right-color: transparent;
+    border-bottom-color: black;
+    border-bottom-width: 5px;
+    padding-left: 10px;
+    padding-left: 25px;
+    transition: width 0.4s ease-in-out;
+    font-family: sans-serif;
+    font-size: large;
+  }
+  input[type=text]:focus {
+    background-color:rgb(235, 213, 213);
+    color: rgb(164, 43, 164);
+    width: 50%;
 }
