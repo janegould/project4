@@ -1,5 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
+
 button{
-    background-color: black;
+    background-color: pink;
+    font-size: medium;
+    text-shadow: rgb(174, 32, 174);
+}
+body{
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .li {
