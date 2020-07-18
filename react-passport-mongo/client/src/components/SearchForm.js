@@ -1,7 +1,6 @@
 import React from "react";
 import style from "./style.module.css";
 
-
 function SearchForm(props) {
   return (
     <form>
@@ -12,7 +11,7 @@ function SearchForm(props) {
           value={props.search}
           name="search"
           type="text"
-          className="form-control"
+          className= {style.head}
           placeholder="Search for a Gif"
           id="search"
         />
