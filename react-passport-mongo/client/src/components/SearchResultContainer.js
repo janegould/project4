@@ -57,7 +57,19 @@ class SearchResultContainer extends Component {
 					handleInputChange={this.handleInputChange}
 				/>
 				{/* render all results */}
-				<ResultList results={this.state.results} />
+
+				{this.state.results.map(result => {
+				console.log(result.data.data);
+				return result.data.data.map(element => (
+					<span key={element.id}>
+						<img
+							alt={element.title}
+							className='img-fluid'
+							src={element.images.original.url}
+						/>
+					</span>
+				));
+			})}
 			</div>
 		);
 	}
