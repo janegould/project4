@@ -6,7 +6,7 @@ import SearchResultContainer from '../../components/SearchResultContainer';
 export default props => {
 	return (
 		<>
-			<div>Hello</div>
+			<div  style={{paddingTop:'15px'}}> </div>
 			<SearchResultContainer />
 		</>
 	);

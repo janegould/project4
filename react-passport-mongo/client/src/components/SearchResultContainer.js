@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SearchForm from './SearchForm';
 import ResultList from './ResultList';
 import API from '../utils/AJAX';
+import style from "./style.module.css";
 
 class SearchResultContainer extends Component {
 	state = {
@@ -50,8 +51,9 @@ class SearchResultContainer extends Component {
 
 	render() {
 		return (
-			<div>
+			<div >
 				<SearchForm
+					
 					search={this.state.search}
 					handleFormSubmit={this.handleFormSubmit}
 					handleInputChange={this.handleInputChange}
@@ -64,7 +66,7 @@ class SearchResultContainer extends Component {
 					<span key={element.id}>
 						<img
 							alt={element.title}
-							className='img-fluid'
+							className={style.gif}
 							src={element.images.original.url}
 						/>
 					</span>

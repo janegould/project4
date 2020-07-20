@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
 
 button{
+    margin-left: 15px;
     background-color: pink;
     font-size: medium;
     font-weight: 500;
@@ -29,4 +30,11 @@ input[type=text] {
     background-color:rgb(235, 213, 213);
     color: rgb(164, 43, 164);
     width: 50%;
+}
+
+
+.gif{
+    width: 25%;
+    height: 15%;
+    margin-left: 5%;
 }
