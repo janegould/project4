@@ -25,7 +25,7 @@ const Navbar = props => {
 	return (
 		<div
 			style={{ padding: 4, color: 'white', lineHeight: '20px' , textAlign: "center" }}
-			className='bg-success'
+			className='bg-secondary text-white'
 		>
 			<Link to='/'>
 				<div style = {{fontSize: '50px'}} className={`${style.logo} btn`} >
