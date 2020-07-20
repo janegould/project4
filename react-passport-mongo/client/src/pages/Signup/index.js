@@ -5,6 +5,17 @@ import { Redirect } from 'react-router-dom';
 import { Col, Row, Container } from '../../components/Grid';
 import { Input, FormBtn } from '../../components/Form';
 import Card from '../../components/Card';
+import fail from './fail.gif';
+import patrick from './patrick.gif';
+import monkey from './monkey.gif';
+import fail2 from './fail2.gif';
+import tim from './tim.gif';
+import pug from './pug.gif';
+import pw from './pw.gif';
+import help from './help.gif';
+import kid from './kid.gif';
+
+
 
 class Signup extends Component {
 	constructor(props) {
@@ -77,7 +88,26 @@ class Signup extends Component {
 		return (
 			<Container fluid>
 				<Row>
-					<Col size='12'>
+					<Col size='3'>
+					<img src={fail} alt="loading..." />
+					</Col>
+					<Col size='3'>
+					<img src={patrick} alt="loading..." />
+					</Col>
+					<Col size='3'>
+					<img src={pw} alt="loading..." />
+					</Col>
+					<Col size='3'>
+					<img src={help} alt="loading..." />
+					</Col>
+				</Row>
+				<Row>
+				<Col size ='4'>
+				<img src={fail2} alt="loading..." />
+
+				</Col>
+					<Col size='4'>
+					
 						<Card title='Signup'>
 							<form className={styles.form} onSubmit={this.handleFormSubmit}>
 								<Input
@@ -116,7 +146,27 @@ class Signup extends Component {
 							</form>
 						</Card>
 					</Col>
+					<Col size='4'>
+					<img src={monkey} alt="loading..." />
+					</Col>
 				</Row>
+				<Row>
+					<Col size='3'>
+					<img src={tim} alt="loading..." />
+					</Col>
+					<Col size='3'>
+					<img src={pug} alt="loading..." />
+					</Col>
+					<Col size='3'>
+					<img src={help} alt="loading..." />
+					</Col>
+					<Col size='3'>
+					<img src={kid} alt="loading..." />
+					</Col>
+				</Row>
+
+				
+
 				{/* redirect on authenticated */}
         { this.props.user && this.props.user._id 
           ?  <Redirect to='/home' /> 

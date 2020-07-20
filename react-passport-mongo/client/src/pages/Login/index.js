@@ -5,6 +5,18 @@ import { Col, Row, Container } from '../../components/Grid';
 import { Input, FormBtn } from '../../components/Form';
 import Card from '../../components/Card';
 import styles from './style.module.css';
+import kitten from './kitten.gif';
+import fall from './fall.gif';
+import gan from './gan.gif';
+import tiktok from './tiktok.gif';
+import dog2 from './dog2.gif';
+import fine from './fine.gif';
+import parrot from './parrot.gif';
+import code from './code.gif';
+import baboon from './baboon.gif';
+import ufo from './ufo.gif';
+
+
 
 class Login extends Component {
 	constructor(props) {
@@ -57,7 +69,24 @@ class Login extends Component {
 		return (
 			<Container fluid>
 				<Row>
-					<Col size='12'>
+					<Col size='3'>
+					<img src={fall} alt="loading..." />
+					</Col>
+					<Col size='3'>
+					<img src={gan} alt="loading..." />
+					</Col>
+					<Col size='3'>
+					<img src={parrot} alt="loading..." />
+					</Col>
+					<Col size='3'>
+					<img src={dog2} alt="loading..." />
+					</Col>
+				</Row>
+				<Row>	
+				<Col size ='4'>
+				<img src={kitten} alt="loading..." />
+				</Col>
+					<Col size='4'>
 						<Card title='Login'>
 							<form className={styles.form} onSubmit={this.handleFormSubmit}>
 								<Input
@@ -82,6 +111,23 @@ class Login extends Component {
 								</FormBtn>
 							</form>
 						</Card>
+					</Col>
+					<Col size='4'>
+					<img src={fine} alt="loading..." />
+					</Col>
+				</Row>
+				<Row>
+					<Col size='3'>
+					<img src={code} alt="loading..." />
+					</Col>
+					<Col size='3'>
+					<img src={tiktok} alt="loading..." />
+					</Col>
+					<Col size='3'>
+					<img src={baboon} alt="loading..." />
+					</Col>
+					<Col size='3'>
+					<img src={ufo} alt="loading..." />
 					</Col>
 				</Row>
 
