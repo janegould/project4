@@ -20,8 +20,8 @@ export function TextArea(props) {
 
 export function FormBtn(props) {
   return (
-    <button {...props} style={{ float: "right", marginBottom: 10 }} className={`btn btn-${ props.theme ? props.theme : "success"}`}>
-      {props.children}
-    </button>
+    <button {...props} style={{ float: "right", marginBottom: 10 }} className={`btn btn-${ props.theme ? props.theme : "success"}`} style={{backgroundColor : 'rgb(237, 29, 98)', borderColor : 'rgb(237, 29, 98)'}}>
+    {props.children}
+   </button>
   );
 }

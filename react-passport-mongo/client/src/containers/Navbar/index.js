@@ -24,19 +24,19 @@ const Navbar = props => {
 
 	return (
 		<div
-			style={{ padding: 4, color: 'white', lineHeight: '20px' , textAlign: "center" }}
-			className='bg-secondary text-white'
-		>
+            style={{ padding: 4,backgroundColor: 'white', lineHeight: '20px' , textAlign: "center" }}   
+        >
 			<Link to='/'>
-				<div style = {{fontSize: '50px'}} className={`${style.logo} btn`} >
+				<div style = {{fontSize: '50px', color: 'rgb(237, 29, 98)', backgroundColor: "White"}} className={`${style.logo} btn`} >
 				Picto-giphy
 				</div>
 			</Link>
 			{ props.user._id 
 				?  <Button theme='dark' onClick={signout}><i className='fa fa-sign-out fa-1x' aria-hidden='true'></i></Button>
 				:  location.pathname === '/signup' 
-					? 	<Link to='/login'><Button>login</Button></Link>
-					:  <Link to='/signup'><Button theme='primary' style = {{left: '20px'}}>Signup</Button></Link>
+					? 	<Link to='/login'><Button style={{backgroundColor : 'rgb(237, 29, 98)', borderColor : 'rgb(237, 29, 98)'}}>login</Button></Link>
+				
+					:  <Link to='/signup'><Button style={{backgroundColor : 'rgb(237, 29, 98)', borderColor : 'rgb(237, 29, 98)'}} >signup</Button></Link>
 			}
 		</div>
 	);
